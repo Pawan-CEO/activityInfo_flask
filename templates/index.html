@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActivityInfo WDC</title>
+</head>
+<body>
+    <h1>Welcome to {{ page_name }} Word</h1>
+
+    <form method="post" action="/{{ next_page }}">
+        <label for="user_input">Please select {{ page_name }} Name:</label>
+        {% if false_values=="NO" %}
+        <select id ="value_input" name="value_input">
+            {% for val in list_index %}
+                <option value="{{ list_values[val] }}">{{list_labels[val]}}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+        <button type="submit">Load {{ next_page }}</button>
+    </form>
+</body>
+</html>
